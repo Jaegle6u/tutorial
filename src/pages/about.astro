@@ -1,3 +1,30 @@
+---
+import '../styles/global.css';
+const pageTitle = "A propos de moi";
+const identity = {
+	firstname: "Loïc",
+	country: "France",
+	occupation: "Développeur web",
+	hobbies: ["Trail", "Cuisine", "Programmation"],
+};
+const skills = [
+	"HTML",
+	"CSS",
+	"JavaScript",
+	"TypeScript",
+	"React",
+	"Vue.js",
+	"Node.js",
+	"Astro",
+];
+const happy = true;
+const finished = false;
+const goal = 3;
+
+const skillColor ="crimson";
+const fontWeight ="bold";
+const textCase = "uppercase";
+---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -5,13 +32,41 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
+		<style define:vars={{skillColor, fontWeight, textCase}}>
+			h1 {
+				color: purple;
+				font-size: 4rem;
+			}
+			.skill{
+				color: var(--skillColor);
+				font-weight: var(--fontWeight);
+				text-transform: var(--textCase);
+			}
+		</style>
 	</head>
 	<body>
         <a href="/">Accueil</a><br>
         <a href="/blog/">Blog</a>
-		<h1>About</h1>
-		<h2>Mes origines</h2>
-        <p>Je viens de Mittlach</p>
+		<h1>{pageTitle}</h1>
+		<p>Petites informations me concernant :</p>
+        <ul>
+            <li>Je m'appelle {identity.firstname}.</li>
+            <li>Je vis en {identity.country} et je suis {identity.occupation}.</li>
+            {identity.hobbies.length >= 2 &&
+                <li>Deux de mes loisirs sont : {identity.hobbies[0]} et {identity.hobbies[1]}</li>
+            }
+            
+        </ul>
+        <p>Voici mes compétences :</p>
+        <ul>
+            {skills.map((skill) => (
+                <li class="skill">{skill}</li>
+            ))}
+        </ul>
+		{		happy && <p>Je suis heureux d'apprendre 	Astro !</p>
+		}
+		{finished && <p>J'ai terminé ce tutoriel</p>}
+
 	</body>
 </html>
