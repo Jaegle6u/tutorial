@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: Mon troisième article de blog
 author: Apprenti Astro
 description: "J'ai eu quelques défis, mais demander de l'aide à la communauté m'a vraiment aidé !"
