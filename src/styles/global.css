@@ -12,6 +12,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: var(--font-roboto);
 }
 #corps_de_page{
   padding: 1rem;
@@ -29,7 +30,7 @@ h1 {
 
 /* Styles de la navigation */
 .menu {
-  background-color: #0d0950;
+  background-color: #3E035C;
   border: none;
   color: #fff;
   font-size: 1.2rem;
@@ -51,7 +52,7 @@ h1 {
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #0d0950;
+  color: #fff;
 }
 
 .nav-links a:hover,
@@ -68,18 +69,11 @@ h1 {
 
 /*Mode sombre*/
 html.dark {
-  background-color: #0d0950;
+  background-color: #292929;
   color: #fff;
 }
 
-.dark .menu {
-  background-color: #fff;
-  color: #000;
-}
 
-.dark header{
-    background-color:  #0d0950;
-}
 
 .dark .nav-links a:hover,
 .dark .nav-links a:focus {
@@ -91,7 +85,7 @@ html.dark {
 }
 
 .dark a {
-  color: #ff9776;
+  color: #fff;
 }
 
 /* Grand ecran */
