@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import maTeteFace from '../images/maTeteFace.jpg';
+import { Image } from "astro:assets";
 const pageTitle = "A propos de moi";
 const identity = {
-	firstname: "Loïc",
+	firstname: "Loïc JAEGLE",
 	country: "France",
 	occupation: "Développeur web",
 	hobbies: ["Trail", "Cuisine", "Programmation"],
@@ -13,9 +15,10 @@ const skills = [
 	"JavaScript",
 	"TypeScript",
 	"React",
-	"Vue.js",
+	"SQL",
 	"Node.js",
 	"Astro",
+	"PHP"
 ];
 const happy = true;
 const finished = true;
@@ -26,19 +29,24 @@ const fontWeight ="bold";
 const textCase = "uppercase";
 ---
 <BaseLayout pageTitle={pageTitle}>
-	<style is:global define:vars={{skillColor, fontWeight, textCase}}>
-			h1 {
-				color: purple;
-				font-size: 4rem;
-			}
+	<style  define:vars={{skillColor, fontWeight, textCase}}>
+			
 			.skill{
 				color: var(--skillColor);
 				font-weight: var(--fontWeight);
 				text-transform: var(--textCase);
 			}
+			#identite{
+				display: flex;
+				gap: 1rem;
+				
+				
+			}
 	</style>
-	
-	<p>Petites informations me concernant :</p>
+	<div id="identite">
+		
+		<div>
+			<p>Petites informations me concernant :</p>
         <ul>
             <li>Je m'appelle {identity.firstname}.</li>
             <li>Je vis en {identity.country} et je suis {identity.occupation}.</li>
@@ -47,6 +55,11 @@ const textCase = "uppercase";
             }
             
         </ul>
+		</div>
+		<Image src={maTeteFace} alt="Ma tronche" width="100" />
+	</div>
+	
+	
         <p>Voici mes compétences :</p>
         <ul>
             {skills.map((skill) => (
@@ -55,6 +68,7 @@ const textCase = "uppercase";
         </ul>
 		{happy && <p>Je suis heureux d'apprendre 	Astro !</p>}
 		{finished && <p>J'ai terminé ce tutoriel</p>}
+		<p>Je me sers de ce site pour apprendre à utiliser Astro donc c'est normal que c'est moche !!!</p>
 </BaseLayout>
 		
 	

@@ -6,11 +6,27 @@ import Social from './Social.astro';
 <style>
     footer {
         display: flex;
+        flex-direction: column;
         gap: 1rem;
         margin-top:  2rem;
+        background-color: blueviolet;
+        
+    }
+    div{
+        margin: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    p{
+        align-self: center;
     }
 </style>
 <footer>
-    <Social platform="twitter" username="jaipastwitter" />
-    <Social platform="github" username="jaegle6u" />
+    <div>
+        <Social platform="twitter" username="jaipastwitter" />
+        <Social platform="github" username="jaegle6u" />
+    </div>
+    
+    <p>Développer par Loic JAEGLE</p>
 </footer>

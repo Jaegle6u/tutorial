@@ -6,9 +6,16 @@ html {
 body {
   margin: 0 auto;
   width: 100%;
-  max-width: 80ch;
-  padding: 1rem;
+  /*max-width: 80ch;*/
+  /*padding: 1rem;*/
   line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#corps_de_page{
+  padding: 1rem;
+  flex: 1;
 }
 
 * {
@@ -17,7 +24,7 @@ body {
 
 h1 {
   margin: 1rem 0;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 /* Styles de la navigation */
@@ -55,6 +62,9 @@ h1 {
 :has(.menu[aria-expanded="true"]) .nav-links {
   display: unset;
 }
+:has(.menu[aria-expanded="true"]) #h1_header {
+  display: none;
+}
 
 /*Mode sombre*/
 html.dark {
@@ -65,6 +75,10 @@ html.dark {
 .dark .menu {
   background-color: #fff;
   color: #000;
+}
+
+.dark header{
+    background-color:  #0d0950;
 }
 
 .dark .nav-links a:hover,
@@ -97,5 +111,8 @@ html.dark {
   }
   .menu {
     display: none;
+  }
+  h1{
+    font-size: 2.5rem;
   }
 }
