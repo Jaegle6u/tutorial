@@ -2,11 +2,13 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from '../components/Greeting.jsx'
 import Meteo from "../components/Meteo.astro";
+import Meteo2 from "../components/Meteo2.jsx"
 const pageTitle = "Page d'accueil";
 ---
 <BaseLayout pageTitle={pageTitle}>
 	<h2>Mon sous titre de blog génial</h2>
 	<p>Site de test et d'apprentissage d'Astro</p>
 	<Meteo />
+	<Meteo2 client:load/>
 	<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>

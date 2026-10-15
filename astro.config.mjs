@@ -14,7 +14,7 @@ export default defineConfig({
   },
   {
     provider: fontProviders.fontsource(),
-    name: "Roboto-Mono",
+    name: "Roboto Mono",
     cssVariable: "--font-roboto-mono",
   }
 ]
